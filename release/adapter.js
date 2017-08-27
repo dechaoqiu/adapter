@@ -1781,7 +1781,8 @@ function filterIceServers(iceServers, edgeVersion) {
           hasTurn = true;
           return true;
         }
-        return url.indexOf('stun:') === 0 && edgeVersion >= 14393;
+        return url.indexOf('stun:') === 0 && edgeVersion >= 14393 &&
+           url.indexOf('?transport=udp') === -1;
       });
 
       delete server.url;
